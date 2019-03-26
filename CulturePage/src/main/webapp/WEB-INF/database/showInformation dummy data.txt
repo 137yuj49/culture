@@ -1,0 +1,65 @@
+insert into show values(show_seq.nextval, 's0001', '국립중앙박물관 특별전 <황금인간의 땅, 카자흐스탄>',7, '2019-05-20', 'classic', '031-401-7484', 'kazakhstan.PNG', '20001');
+insert into show values(show_seq.nextval, 's0002', '코리안심포니오케스트라 212회 정기연주회',7, '2019-05-20', 'classic', '031-401-7484', 'koreansymphony.PNG', '20002');
+insert into show values(show_seq.nextval, 's0003', '김헌재 피아노 리사이틀',8, '2019-05-20', 'classic', '031-401-7484', 'kimhunjaepiano.PNG', '20003');
+insert into show values(show_seq.nextval, 's0004', '국악작곡연구회 제3회 정기연주회 <琴,새로운 옷을 입다>',9, '2019-05-20', 'classic', '031-401-7484', 'gukakjakkok_3st.PNG', '20004');
+insert into show values(show_seq.nextval, 's0005', '그림 읽어주는 베토벤 미켈란젤로vs다빈치',10, '2019-05-20', 'classic', '031-401-7484', 'beethoventheconcert.PNG', '20005');
+insert into show values(show_seq.nextval, 's0006', '이지혜 피아노 독주회', 6, '2019-05-20', 'classic', '031-401-7484', 'leejihyepiano.PNG', '20006');
+insert into show values(show_seq.nextval, 's0007', '올댓인디 <커피소년 콘서트>',5, '2019-05-20', 'concert', '031-401-7484', 'coffeeboy.PNG', '20007');
+insert into show values(show_seq.nextval, 's0008', '뮤지컬 <오! 당신이 잠든 사이>',7, '2019-05-20', 'musical', '031-401-7484', 'ohwhenyousleep.PNG', '20008');
+insert into show values(show_seq.nextval, 's0009', '올림픽조각프로젝트-Post88展',8, '2019-05-20', 'exhibition', '031-401-7484', 'post88.PNG', '20009');
+insert into show values(show_seq.nextval, 's0010', '학전 어린이 무대 <고추장 떡볶이>',9, '2019-05-20', 'musical', '031-401-7484', 'kochujang.PNG', '20010');
+insert into show values(show_seq.nextval, 's0011', '가족뮤지컬 〈어린이 캣’s-3탄〉- 신도림',7, '2019-05-20', 'musical', '031-401-7484', 'cat3.PNG', '20011');
+insert into show values(show_seq.nextval, 's0012', '2018 창작산실 무용 ＜Down the Rabbit Hole＞',8, '2019-05-20', 'dancing', '031-401-7484', '2018chanjaksansil.PNG', '20012');
+insert into show values(show_seq.nextval, 's0013', '2019 어린이율동놀이뮤지컬 <호비쇼>',9, '2019-05-20', 'musical', '031-401-7484', 'hobishow.PNG', '20013');
+insert into show values(show_seq.nextval, 's0014', '2019 서울시향 실내악Ⅱ: 슈테판 도어',10, '2019-05-20', 'classic', '031-401-7484', 'stefanDohr2019.PNG', '20001');
+insert into show values(show_seq.nextval, 's0015', '박슬기 첼로 독주회',12, '2019-05-20', 'classic', '031-401-7484', 'parkselkichelo.PNG', '20003');
+insert into show values(show_seq.nextval, 's0016', '브런치 콘서트 시즌3 - 엘 콘돌 파사',7, '2019-05-20', 'classic', '031-401-7484', 'elcondolpasa.PNG', '20004');
+insert into show values(show_seq.nextval, 's0017', '조무현 피아노 독주회',8, '2019-05-20', 'classic', '031-401-7484', 'jomuhyunpiano.PNG', '20013');
+insert into show values(show_seq.nextval, 's0018', '가온앙상블 정기연주회',9, '2019-05-20', 'classic', '031-401-7484', 'gaonansangbl.PNG', '20014');
+insert into show values(show_seq.nextval, 's0019', '2019 용인문화재단 신춘음악회 <모두 봄>',10, '2019-05-20', 'classic', '031-401-7484', 'yonginmunhwajadanmodubom.PNG', '20015');
+insert into show values(show_seq.nextval, 's0020', '과천시립교향악단 제57회 정기연주회',13, '2019-05-20', 'classic', '031-401-7484', 'beethoveneroica.PNG', '20016');
+insert into show values(show_seq.nextval, 's0021', '[3월 13일] 나윤아 바이올린 독주회',9, '2019-05-20', 'classic', '031-401-7484', 'nayunaviolin.PNG', '20017');
+insert into show values(show_seq.nextval, 's0023', '이혜경 플루트 독주회',8, '2019-05-20', 'classic', '031-401-7484', 'fluteleehyekyung.PNG', '20018');
+insert into show values(show_seq.nextval, 's0024', '비올리스트 임요섭 리사이틀 <브람스를 좋아하세요...>',7, '2019-05-20', 'classic', '031-401-7484', 'josephlimviola.PNG', '20019');
+insert into show values(show_seq.nextval, 's0025', '김민지 귀국 피아노 독주회',8, '2019-05-20', 'classic', '031-401-7484', 'kimminjipiano.PNG', '20020');
+insert into show values(show_seq.nextval, 's0026', '피아니스트 미로슬라브 꿀띠쉐프 초청 새봄음악회',8, '2019-05-20', 'classic', '031-401-7484', 'saebomeumakhol.PNG', '20021');
+insert into show values(show_seq.nextval, 's0027', '2019 인문예술콘서트 오늘 2월',8, '2019-05-20', 'classic', '031-401-7484', '2wolinmunyesul.PNG', '20022');
+insert into show values(show_seq.nextval, 's0028', '오왠 단독 콘서트 <Mellow Night>',8, '2019-05-20', 'concert', '031-401-7484', 'oenconcert.PNG', '20023');
+insert into show values(show_seq.nextval, 's0029', '이어스 앤 이어스 내한공연',8, '2019-05-20', 'concert', '031-401-7484', 'yearandyears.PNG', '20024');
+insert into show values(show_seq.nextval, 's0030', '양다일 X 서사무엘 콘서트 The Unique',8, '2019-05-20', 'concert', '031-401-7484', 'yangdaniel.PNG', '20025');
+insert into show values(show_seq.nextval, 's0031', '한영애 콘서트',8, '2019-05-20', 'concert', '031-401-7484', 'hanyoungeconcert.PNG', '20026');
+insert into show values(show_seq.nextval, 's0032', '마스터피스 시리즈 III 바흐 모테트 전곡 연주',8, '2019-05-20', 'classic', '031-401-7484', 'seoulmotethapchangdan30.PNG', '20027');
+
+insert into show values(show_seq.nextval, 's1001', '연극 진실',8, '2019-05-20', 'drama', '031-401-7484', 'jinsil.PNG', '20028');
+insert into show values(show_seq.nextval, 's1002', '뮤지컬 <6시 퇴근>',8, '2019-05-20', 'musical', '031-401-7484', '6sitoigen.PNG', '20029');
+insert into show values(show_seq.nextval, 's1003', '따끈따끈베이커리',8, '2019-05-20', 'drama', '031-401-7484', 'tagentagenbakery.PNG', '20030');
+insert into show values(show_seq.nextval, 's1004', '연극 <다시, 다시락(絡)이>',8, '2019-05-20', 'drama', '031-401-7484', 'dasilaki.PNG', '20031');
+insert into show values(show_seq.nextval, 's1005', '제4회 대한민국연극제 서울대회 참가작 <403호 아가씨는 누가 죽였을까?>',8, '2019-05-20', 'drama', '031-401-7484', '403hoagassi.PNG', '20032');
+insert into show values(show_seq.nextval, 's1006', '까브라더쑈',8, '2019-05-20', 'drama', '031-401-7484', 'kkabrothershow.PNG', '20033');
+insert into show values(show_seq.nextval, 's1007', '뮤지컬 더데빌（Musical THE DEVIL)',8, '2019-05-20', 'musical', '031-401-7484', 'thedevil.PNG', '20034');
+insert into show values(show_seq.nextval, 's1008', '쉬어매드니스',8, '2019-05-20', 'drama', '031-401-7484', 'sheamednis.PNG', '20035');
+insert into show values(show_seq.nextval, 's1009', '[국립극장] NT Live 뜨거운 양철 지붕 위의 고양이',8, '2019-05-20', 'musical', '031-401-7484', 'yangchuljibungcat.PNG', '20036');
+insert into show values(show_seq.nextval, 's1010', '자기 앞의 생',8, '2019-05-20', 'drama', '031-401-7484', 'jakiapsaeng.PNG', '20037');
+insert into show values(show_seq.nextval, 's1011', '아빠 얼굴 예쁘네요',8, '2019-05-20', 'drama', '031-401-7484', 'appafacegood.PNG', '20038');
+insert into show values(show_seq.nextval, 's1012', '가족발레극 댄싱뮤지엄',8, '2019-05-20', 'drama', '031-401-7484', 'dancingmusiem.PNG', '20039');
+insert into show values(show_seq.nextval, 's1013', '뮤지컬 `영웅` 10주년 기념공연',8, '2019-05-20', 'musical', '031-401-7484', 'youngung10st.PNG', '20040');
+insert into show values(show_seq.nextval, 's1014', '가족뮤지컬 〈백설공주 미미 - 숲속오두막〉-부산',8, '2019-05-20', 'musical', '031-401-7484', 'supsokodumak.PNG', '20041');
+insert into show values(show_seq.nextval, 's1015', '뮤지컬 지킬앤하이드（MUSICAL JEKYLL HYDE)',8, '2019-05-20', 'musical', '031-401-7484', 'jikilandhide.PNG', '20042');
+insert into show values(show_seq.nextval, 's1016', '헤스(HES) 극단해밀 <트랜스포머 마법열차>',8, '2019-05-20', 'drama', '031-401-7484', 'transformerhes.PNG', '20043');
+insert into show values(show_seq.nextval, 's1017', '국립창극단 심청가',8, '2019-05-20', 'drama', '031-401-7484', 'simchungga.PNG', '20044');
+insert into show values(show_seq.nextval, 's1018', '스테이지6: 스탠드업 코미디',8, '2019-05-20', 'drama', '031-401-7484', 'stage6.PNG', '20045');
+insert into show values(show_seq.nextval, 's1019', '가족뮤지컬 어린왕자',8, '2019-05-20', 'musical', '031-401-7484', 'arinwangja.PNG', '20046');
+insert into show values(show_seq.nextval, 's1020', '연극 두여자 - 대학로',8, '2019-05-20', 'drama', '031-401-7484', 'twowoman.PNG', '20047');
+insert into show values(show_seq.nextval, 's1021', '〈연극 안나라수마나라〉_대학로',8, '2019-05-20', 'drama', '031-401-7484', 'annarasumanara.PNG', '20048');
+insert into show values(show_seq.nextval, 's1022', '룸넘버13',8, '2019-05-20', 'drama', '031-401-7484', 'roomnumber13.PNG', '20049');
+insert into show values(show_seq.nextval, 's1023', '쇼뮤지컬 꽃슈스 (꽃보다슈퍼스타)',8, '2019-05-20', 'musical', '031-401-7484', 'flowershoes.PNG', '20050');
+insert into show values(show_seq.nextval, 's1024', '뮤직드라마-당신만이',8, '2019-05-20', 'drama', '031-401-7484', 'dangsinmani.PNG', '20051');
+insert into show values(show_seq.nextval, 's1025', '연극 <술래잡기>',8, '2019-05-20', 'drama', '031-401-7484', 'sulajapgi.PNG', '20052');
+insert into show values(show_seq.nextval, 's1026', 'Let us Dance, CRAZY!!_SACHOOM2(사춤2)',8, '2019-05-20', 'drama', '031-401-7484', 'letsdancecrazy.PNG', '20053');
+
+insert into show values(show_seq.nextval, 's2001', '유니버설발레단 <백조의 호수>',8, '2019-05-20', 'dancing', '031-401-7484', 'bakjohosu.PNG', '20054');
+insert into show values(show_seq.nextval, 's2002', '2019 <수요춤전>',8, '2019-05-20', 'dancing', '031-401-7484', 'suyochimjun.PNG', '20055');
+insert into show values(show_seq.nextval, 's2003', '2019 창작산실 무용 <변신>',8, '2019-05-20', 'dancing', '031-401-7484', 'byensin.PNG', '20056');
+
+
+

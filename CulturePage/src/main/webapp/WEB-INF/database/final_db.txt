@@ -1,0 +1,194 @@
+drop sequence show_seq;
+create sequence show_seq
+	start with 1
+	increment by 1;
+commit;
+
+drop table show;
+commit;
+
+create table show (
+	show_no number(7) not null,
+	show_id varchar2(10) not null,
+	show_name varchar2(100) not null,
+	show_fee number(7) not null,	
+	show_mdate varchar2(30) null,
+	show_genre varchar2(30) not null,
+	show_phone varchar2(50) not null,
+	show_picture varchar2(100) null,
+	concerthall_id number(10) not null,
+	primary key(show_id)
+);
+commit;
+
+drop table concerthall;
+commit;
+
+create table concerthall (
+	concerthall_id varchar2(10) not null,
+	concerthall_name varchar2(30) not null,
+	concerthall_code varchar2(20) not null,
+	concerthall_addr1 varchar2(100) not null,
+	concerthall_addr2 varchar2(300) not null,
+	concerthall_phone varchar2(50) not null,
+	primary key(concerthall_id)
+);
+commit;
+
+drop sequence member_seq;
+create sequence member_seq
+	start with 1
+	increment by 1;
+commit;
+
+drop table member;
+commit;
+
+create table member (
+	id varchar2(30) not null,
+	email varchar2(80) not null,
+	pwd varchar2(70) not null,
+	name varchar2(30) not null,
+	primary key(id)
+);
+commit;
+
+drop table login;
+commit;
+
+create table login (
+	id varchar2(30) not null,
+	pwd varchar2(30) not null,
+	email varchar2(100) not null
+);
+commit;
+
+drop table event;
+commit;
+
+create table event (
+	event_title varchar2(30) not null,
+	event_edate varchar2(100) not null,
+	event_place varchar2(50) not null,
+	event_invitedate varchar2(50) not null
+);
+commit;
+
+drop table issue;
+create table issue (
+	issue_date varchar2(30) not null,
+	issue_title varchar2(50) not null,
+	issue_picture varchar2(40) not null
+);
+commit;
+
+---------------------------------------------------------
+drop table freeboard;
+commit;
+
+create table freeboard (
+	no number(20) not null,
+	title varchar2(100) not null,
+	content varchar2(1000) not null,
+	fdate date not null,
+	id varchar2(100) not null	
+);
+commit;
+
+drop sequence freeboard_seq;
+create sequence freeboard_seq;
+commit;
+
+---------------------------------------------------------
+drop table payment;
+commit;
+
+create table payment (
+	payment_no varchar2(30) primary key,
+	member_id varchar2(30) not null,
+	methodofpayment varchar2(50) not null,
+	totalprice number(30) not null,
+	paymentdate date not null	
+);
+commit;
+
+drop table ticketing;
+commit;
+
+create table ticketing (
+	ticketing_no varchar2(30) primary key,
+	ticket_no varchar2(30) not null,
+	ticketing_count number(30) not null	
+);
+commit;
+
+drop table ticket;
+commit;
+
+create table ticket (
+	ticket_no varchar2(30) primary key,
+	movie_no varchar2(30) not null,
+	screeningplan_no varchar2(30) not null,
+	movieplace_no varchar2(30) not null,
+	seat_no varchar2(30) not null,	
+	id varchar2(30) not null
+);
+commit;
+
+drop table movie;
+commit;
+
+create table movie (
+	movie_no varchar2(30) primary key,
+	movie_title varchar2(70) not null,
+	movie_content varchar2(1000) not null,
+	movie_director varchar2(30) not null,
+	moviestar varchar2(100) not null,
+	price number(30) not null
+);
+commit;
+
+drop table movieplace;
+commit;
+
+create table movieplace (
+	movieplace_no varchar2(30) primary key,
+	totalseats varchar2(30) not null,
+	movieplace_name varchar2(40) not null
+);
+commit;
+
+drop table screeningplan;
+commit;
+
+create table screeningplan (
+	screeningplan_no varchar2(30) primary key,
+	screeningdate varchar2(50) not null,
+	screeningtime varchar2(50) not null,
+	movie_no varchar(30) not null,
+	movieplace_no varchar(30) not null
+);
+commit;
+
+drop table seat;
+commit;
+
+create table seat (
+	seat_no varchar2(30) not null,
+	movieplace_no varchar2(30) not null,
+	screeningplan_no varchar2(30) not null,
+	seat_ox varchar2(30) not null
+);
+commit;
+
+drop sequence ticket_seq;
+create sequence ticket_seq;
+------------------------------------------------------
+
+drop table reply;
+create table reply (
+	writer varchar2(50) not null,
+	rcomment varchar2(500) not null,
+	id varchar2(30) not null
+);
+commit;

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>	
+	<typeAliases>
+		<typeAlias alias="dto" type="com.cp.member.MemberDto"/>
+		<typeAlias alias="sDto" type="com.cp.show.ShowDto"/>
+		<typeAlias alias="moviePlace" type="com.cp.movieplace.MoviePlace"/>
+		<typeAlias alias="screeningplan" type="com.cp.screeningplan.ScreeningPlan"/>
+		<typeAlias alias="seat" type="com.cp.seat.Seat"/>
+		<typeAlias alias="freeboard" type="com.cp.freeboard.Freeboard"/>
+		<typeAlias alias="cri" type="com.cp.paging.Criteria"/>		
+	</typeAliases>
+			
+	<mappers>
+		<mapper resource="culturePageConfig/my/culturePage.xml"/>
+	</mappers>
+</configuration>

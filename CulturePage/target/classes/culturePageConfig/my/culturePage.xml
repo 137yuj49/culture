@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="culturePage">
+	<!-- member -->
+	<insert id="memInsert" parameterType="com.cp.member.MemberDto">
+		insert into member values(#{id}, #{email}, #{pwd}, #{name})
+	</insert>
+	
+	<select id="memberCheck" resultType="com.cp.member.MemberDto">
+		select * from member where id = #{id} and pwd = #{pwd}
+	</select>
+	
+	<delete id="memberRemove" parameterType="com.cp.member.MemberDto">
+		delete from member where id = #{id} and pwd = #{pwd}
+	</delete>
+	
+	<select id="idCheck" resultType="String">
+		select count(*) from member where id = #{id}
+	</select>
+	
+	<!-- show  -->
+	<insert id="showInsert" parameterType="com.cp.show.ShowDto">
+		insert into show values(show_seq.nextval, #{show_id}, #{show_name}, #{show_fee}, #{show_mdate}, #{show_genre}, #{show_phone}, #{show_picture}, #{concerthall_id})
+	</insert>
+	
+	<select id="allSelectShow" resultType="com.cp.show.ShowDto">
+		select * from show
+	</select>
+	
+	<select id="selectTodayShow" resultType="com.cp.show.ShowDto">
+		select * from show where show_mdate = #{show_mdate}
+	</select>
+	<!-- show Detail Page select the movie -->
+	<select id="selectTheMovie" resultType="com.cp.movie.Movie">
+		select * from movie where movie_title = #{movie_title} 
+	</select>
+	
+	<!-- login -->
+	<insert id="loginInfoInput" parameterType="com.cp.loginInfo.LoginInfo">
+		insert into login values(#{id},#{pwd},#{email})
+	</insert>
+	
+	<!-- logout -->
+	<delete id="loginRemove" parameterType="com.cp.member.MemberDto">
+		delete from login where id = #{id} and pwd = #{pwd}
+	</delete>
+	<!-- event -->
+	<!-- issue -->
+	
+	<!-- detail reservation select the movie date -->
+	<select id="selectTheDate" parameterType="String" resultType="com.cp.screeningplan.ScreeningPlan">
+		select screeningplan.* from screeningplan where movie_no = #{movie_no}
+	</select>
+	
+	<!-- detail reservation select the movie time -->
+	<select id="selectTheTime" parameterType="com.cp.screeningplan.ScreeningPlan" resultType="com.cp.screeningplan.ScreeningPlan">
+		select screeningplan.screeningtime, screeningplan.screeningplan_no,
+			   screeningplan.movieplace_no, movieplace.movieplace_name,
+			   movie.price
+		from screeningplan,
+		     movieplace,
+		     movie
+		where screeningplan.movie_no = movie.movie_no
+			  and screeningplan.movieplace_no = movieplace.movieplace_no
+			  and screeningplan.screeningdate = #{screeningdate}
+			  and screeningplan.movie_no = #{movie_no}
+	</select>	
+	
+	<!-- detail reservation getTime -->
+	<select id="getTime" resultType="com.cp.screeningplan.ScreeningPlan">
+		select * from screeningplan 
+		where screeningdate = #{screeningdate}
+			  and movie_no = #{movie_no}
+			  and movieplace_no = #{movieplace_no}
+	</select>
+	
+	<!-- reservation moviePlace -->
+	<select id="selectAllMoviePlace" resultType="com.cp.movieplace.MoviePlace">
+		select * from movieplace
+	</select>
+	
+	<select id="selectAllMovieAbout" parameterType="com.cp.movieplace.MoviePlace" resultType="com.cp.movie.Movie">
+		select distinct movie.movie_title, movie.movie_no, movie.price
+		from  screeningplan,
+			  movie
+		where screeningplan.movie_no = movie.movie_no
+		      and screeningplan.movieplace_no = #{movieplace_no} 
+	</select>
+	<!-- reservation moviedate -->
+	<select id="getScreeningPlan" parameterType="com.cp.movie.Movie" resultType="com.cp.screeningplan.ScreeningPlan">
+		select * from screeningplan where movie_no = #{movie_no} and movieplace_no = #{movieplace_no}
+	</select>
+	<!-- reservation seat -->
+	<insert id="seatInsert" parameterType="com.cp.seat.Seat">
+		insert into seat values (#{seat_no},#{movieplace_no},#{seat_ox})
+	</insert>
+	<!-- reservation movie_no select -->
+	<select id="selectMovieNo" parameterType="String">
+		select movie_no from movie where movie_title = #{movie_title}
+	</select>
+	<!-- reservation ticket insert -->
+	<insert id="ticketInsert" parameterType="com.cp.ticket.Ticket">
+		insert into ticket values('t'||ticket_seq.nextval,#{movie_no},#{screeningplan_no},#{movieplace_no},#{seat_no},#{id})
+	</insert>
+	<!-- reservation seat insert -->
+	<insert id="seatInforInsert" parameterType="com.cp.seat.Seat">
+		insert into seat values(#{seat_no},#{movieplace_no},#{screeningplan_no},#{seat_ox})
+	</insert>
+	<!-- reservation select checked seatNo -->
+	<select id="selectCheckedSeatNo" parameterType="com.cp.seat.Seat" resultType="String">
+		select seat_no from seat where movieplace_no = #{movieplace_no} and screeningplan_no = #{screeningplan_no}
+	</select>
+	<!-- reservation select ticket about id -->
+	<select id="selectTicketInfo" parameterType="com.cp.ticket.Ticket" resultType="com.cp.ticket.Ticket">
+		select ticket.ticket_no, ticket.movie_no, ticket.screeningplan_no, ticket.movieplace_no, ticket.seat_no, ticket.price,
+			   movie.movie_title,
+			   screeningplan.screeningdate, screeningplan.screeningtime,
+			   movieplace.movieplace_name
+		from  ticket,
+		      movieplace,
+		      movie,
+		      screeningplan 
+		where ticket.movie_no = movie.movie_no
+			  and ticket.movieplace_no = movieplace.movieplace_no
+			  and ticket.screeningplan_no = screeningplan.screeningplan_no
+		      and id = #{id} and screeningplan_no = #{screeningplan_no}
+	</select>
+	<select id="paymentResultPage" resultType="com.cp.ticket.Ticket">
+		select movie.movie_title, screeningplan.screeningdate, 
+			   screeningplan.screeningtime, ticket.ticket_no, ticket.id
+		from ticket,
+			 movie,
+			 screeningplan 
+		where ticket.movie_no = movie.movie_no
+			  and screeningplan.screeningplan_no = ticket.screeningplan_no
+			  and ticket.id=#{id} 
+			  and ticket.movie_no=#{movie_no} 
+		  	  and ticket.movieplace_no=#{movieplace_no} 
+		  	  and ticket.screeningplan_no = #{screeningplan_no}
+	</select>
+	<!-- /////////////////////////////////////////////////////////////////////////////////////////////// -->
+	
+	<!-- 페이징 처리 -->
+    <!-- 이때 중요한 점! 띄워줄 시작 페이지 번호는 현재 페이지인 page 변수가 오는게 아니라, (page-1) * perPageNum
+        값이 와야한다.!! 헌데, #{pageStart} 는 받은 객체의 get 메서드를 호출하기 때문에 getPageStart() 메서드를
+        호출하게 되고, Criteria 클래스의 getPageStart에서 위의 계산식을 반환하도록 해났음으로 시작 페이지 튜플의 행번호를
+        가져올 수 있다. -->
+    <select id="listCriteria" parameterType="com.cp.paging.Criteria" resultType="com.cp.freeboard.Freeboard"> 
+        
+        select rownum, f.*
+        from freeboard f
+        where rownum between #{pageStart} and #{perPageNum}
+       
+    </select>
+ 
+    <!-- 전체 게시글 수를 구하는 sql문 -->
+    <select id="getTotalCount" resultType="java.lang.Integer">        
+        select
+         count(*) 
+         from
+         freeboard                
+    </select>
+	
+	
+	<select id="dbCount" resultType="int">
+		select count(*) from freeboard
+	</select>
+	<select id="detailCount" resultType="int">
+		select count(*) from freeboard
+		where ${skey} like '%' || #{sval} || '%'
+	</select>
+	<select id="detailFreeboard" resultType="com.cp.freeboard.Freeboard">
+		select * from freeboard where id = #{id} and title = #{title}
+	</select>
+	
+	<!-- freeboard content update -->
+	<update id="updateContent" parameterType="com.cp.freeboard.Freeboard">
+		update freeboard set content=#{content} where id=#{id} and title=#{title}
+	</update>
+	<!-- freeboard content delete -->
+	<delete id="deleteContent" parameterType="com.cp.freeboard.Freeboard">
+		delete from freeboard where id = #{id} and title = #{title}
+	</delete>
+	
+	<!-- freeboard reply insert -->
+	<insert id="replyInsert" parameterType="com.cp.reply.Reply">
+		insert into reply values(reply_seq.nextval,#{writer},#{rcomment},#{title},#{id})
+	</insert>
+	
+	<!-- freeboard reply select  -->
+	<select id="selectReply" resultType="com.cp.reply.Reply">
+		select * from reply where id = #{id} and title = #{title} order by no asc
+	</select>
+	
+	<!-- freeboard reply delete -->
+	<delete id="replyDelete" parameterType="com.cp.reply.Reply">
+		delete from reply where writer = #{writer} and rcomment = #{rcomment} and id = #{id}
+	</delete>
+	
+	<!-- freeboard reply update -->
+	<update id="replyUpdate" parameterType="com.cp.reply.Reply">
+		update reply set rcomment = #{rcomment} where writer = #{writer} and id = #{id}
+	</update>
+		
+</mapper>

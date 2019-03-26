@@ -1,0 +1,54 @@
+insert into screeningplan values('sp001','03/15/2019','12:00','m001','mp001');
+insert into screeningplan values('sp002','03/15/2019','15:00','m001','mp001');
+insert into screeningplan values('sp003','03/15/2019','19:00','m001','mp001');
+insert into screeningplan values('sp004','03/16/2019','12:00','m001','mp001');
+insert into screeningplan values('sp005','03/16/2019','15:00','m002','mp001');
+insert into screeningplan values('sp006','03/16/2019','19:00','m002','mp001');
+insert into screeningplan values('sp007','03/17/2019','15:00','m002','mp001');
+insert into screeningplan values('sp008','03/17/2019','17:00','m002','mp001');
+insert into screeningplan values('sp009','03/17/2019','20:00','m002','mp001');
+insert into screeningplan values('sp010','03/18/2019','17:00','m002','mp001');
+insert into screeningplan values('sp011','03/18/2019','20:00','m002','mp001');
+insert into screeningplan values('sp012','03/18/2019','23:00','m002','mp001');
+
+insert into screeningplan values('sp013','03/15/2019','15:00','m003','mp001');
+insert into screeningplan values('sp014','03/15/2019','18:00','m003','mp001');
+insert into screeningplan values('sp015','03/15/2019','21:00','m003','mp001');
+insert into screeningplan values('sp016','03/16/2019','15:00','m003','mp001');
+insert into screeningplan values('sp017','03/16/2019','18:00','m003','mp001');
+insert into screeningplan values('sp018','03/16/2019','21:00','m003','mp001');
+insert into screeningplan values('sp019','03/17/2019','15:00','m003','mp001');
+insert into screeningplan values('sp020','03/17/2019','18:00','m003','mp001');
+insert into screeningplan values('sp021','03/17/2019','21:00','m003','mp001');
+
+insert into screeningplan values('sp022','03/19/2019','17:00','m004','mp002');
+insert into screeningplan values('sp023','03/19/2019','20:00','m004','mp002');
+insert into screeningplan values('sp024','03/19/2019','23:00','m004','mp002');
+
+insert into screeningplan values('sp025','03/20/2019','15:00','m009','mp002');
+insert into screeningplan values('sp026','03/20/2019','18:00','m009','mp002');
+insert into screeningplan values('sp027','03/20/2019','20:40','m009','mp002');
+insert into screeningplan values('sp028','03/21/2019','18:10','m009','mp002');
+insert into screeningplan values('sp029','03/21/2019','20:50','m009','mp002');
+
+insert into screeningplan values('sp030','03/06/2019','20:00','m011','mp003');
+insert into screeningplan values('sp031','03/07/2019','20:00','m011','mp003');
+insert into screeningplan values('sp032','03/08/2019','20:00','m011','mp003');
+insert into screeningplan values('sp033','03/09/2019','20:00','m011','mp003');
+insert into screeningplan values('sp034','03/10/2019','20:00','m011','mp003');
+insert into screeningplan values('sp035','03/11/2019','20:00','m011','mp003');
+insert into screeningplan values('sp036','03/12/2019','20:00','m011','mp003');
+insert into screeningplan values('sp037','03/13/2019','20:00','m011','mp003');
+insert into screeningplan values('sp038','03/14/2019','20:00','m011','mp003');
+insert into screeningplan values('sp039','03/15/2019','20:00','m011','mp003');
+insert into screeningplan values('sp040','03/16/2019','20:00','m011','mp003');
+insert into screeningplan values('sp041','03/17/2019','20:00','m011','mp003');
+insert into screeningplan values('sp042','03/18/2019','20:00','m011','mp003');
+insert into screeningplan values('sp043','03/19/2019','20:00','m011','mp003');
+insert into screeningplan values('sp044','03/20/2019','20:00','m011','mp003');
+insert into screeningplan values('sp045','03/21/2019','20:00','m011','mp003');
+insert into screeningplan values('sp046','03/22/2019','20:00','m011','mp003');
+insert into screeningplan values('sp047','03/23/2019','20:00','m011','mp003');
+
+
+commit;

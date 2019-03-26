@@ -1,0 +1,5 @@
+insert into movieplace values('mp001','30','cgv');
+insert into movieplace values('mp002','40','megabox');
+insert into movieplace values('mp003','40','국립극장');
+insert into movieplace values('mp004','40','안양예술회관');
+commit;

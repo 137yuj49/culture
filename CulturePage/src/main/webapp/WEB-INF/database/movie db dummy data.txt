@@ -1,0 +1,12 @@
+insert into movie values('m001','캡틴마블','마블 시리즈 중 최고봉','James','David',9000);
+insert into movie values('m002','극한직업','남자라면 꼭 봐야할 영화','David','Russell',10000);
+insert into movie values('m003','범블비','재밌는 영화','Paul','clark',9000);
+insert into movie values('m004','아이언맨','마블 시리즈 중 최고','James','Clark',10000);
+insert into movie values('m005','아저씨','원빈의 진면목을 볼 수 있는 영화','이전진','원빈',9000);
+insert into movie values('m006','국제시장','아버지 세대의 애환','박재우','황정민',9000);
+insert into movie values('m007','태극기휘날리며','한국 전쟁의 아픔','김권민','장동건',10000);
+insert into movie values('m008','말모이','한글의 소중함을 느낄 수 있는 영화','이인성','유해진',10000);
+insert into movie values('m009','타이타닉','아름다운 사랑','Mattew','디카프리오',9000);
+insert into movie values('m010','클래식','순수한 사랑에 대한 기억','이선동','조성우',9000);
+insert into movie values('m011','지킬 앤 하이드','다시 시작되는 신화, 대한민국의 독보적인 NO.1 뮤지컬','원미솔','조승우,아이비,홍광호',77000);
+commit;

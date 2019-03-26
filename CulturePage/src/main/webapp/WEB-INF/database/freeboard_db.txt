@@ -1,0 +1,17 @@
+drop table freeboard;
+commit;
+
+create table freeboard (
+	no number(20) not null,
+	title varchar2(100) not null,
+	content varchar2(1000) not null,
+	fdate date not null,
+	id varchar2(100) not null	
+);
+commit;
+
+
+---------------------------------------------------------
+drop sequence freeboard_seq;
+create sequence freeboard_seq;
+commit;

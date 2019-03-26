@@ -1,0 +1,13 @@
+drop table reply;
+create table reply (
+	no number(10) not null,
+	writer varchar2(50) not null,
+	rcomment varchar2(500) not null,
+	title varchar2(50) not null,
+	id varchar2(30) not null
+);
+commit;
+
+drop sequence reply_seq;
+create sequence reply_seq;
+commit;

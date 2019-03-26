@@ -1,0 +1,126 @@
+drop table payment;
+commit;
+
+create table payment (
+	payment_no varchar2(30) primary key,
+	member_id varchar2(30) not null,
+	methodofpayment varchar2(50) not null,
+	totalprice number(30) not null,
+	paymentdate date not null	
+);
+commit;
+
+drop table ticketing;
+commit;
+
+create table ticketing (
+	ticketing_no varchar2(30) primary key,
+	ticket_no varchar2(30) not null,
+	ticketing_count number(30) not null	
+);
+commit;
+
+drop table ticket;
+commit;
+
+create table ticket (
+	ticket_no varchar2(30) primary key,
+	movie_no varchar2(30) not null,
+	screeningplan_no varchar2(30) not null,
+	movieplace_no varchar2(30) not null,
+	seat_no varchar2(30) not null,	
+	id varchar2(30) not null
+);
+commit;
+
+drop table movie;
+commit;
+
+create table movie (
+	movie_no varchar2(30) primary key,
+	movie_title varchar2(70) not null,
+	movie_content varchar2(1000) not null,
+	movie_director varchar2(30) not null,
+	moviestar varchar2(100) not null,
+	price number(30) not null
+);
+commit;
+
+drop table movieplace;
+commit;
+
+create table movieplace (
+	movieplace_no varchar2(30) primary key,
+	totalseats varchar2(30) not null,
+	movieplace_name varchar2(40) not null
+);
+commit;
+
+drop table screeningplan;
+commit;
+
+create table screeningplan (
+	screeningplan_no varchar2(30) primary key,
+	screeningdate varchar2(50) not null,
+	screeningtime varchar2(50) not null,
+	movie_no varchar(30) not null,
+	movieplace_no varchar(30) not null
+);
+commit;
+
+drop table seat;
+commit;
+
+create table seat (
+	seat_no varchar2(30) not null,
+	movieplace_no varchar2(30) not null,
+	screeningplan_no varchar2(30) not null,
+	seat_ox varchar2(30) not null
+);
+commit;
+
+----------------------------------
+drop sequence ticket_seq;
+create sequence ticket_seq;
+----------------------------------
+이 밑에는 db에 넣지 말아 주세요....
+
+ALTER TABLE payment ADD FOREIGN KEY (member_id) REFERENCES member(member_id);
+ALTER TABLE ticketing ADD FOREIGN KEY(ticket_no) REFERENCES ticket(ticket_no);
+ALTER TABLE ticket ADD FOREIGN KEY(movie_no) REFERENCES movie(movie_no);
+ALTER TABLE ticket ADD FOREIGN KEY(screeningplan_no) REFERENCES screeningplan(screeningplan_no);
+ALTER TABLE ticket ADD FOREIGN KEY(movieplace_no) REFERENCES movieplace(movieplace_no);
+ALTER TABLE ticket ADD FOREIGN KEY(seat_no) REFERENCES seat(seat_no);
+ALTER TABLE movie ADD FOREIGN KEY(movieplace_no) REFERENCES movieplace(movieplace_no);
+ALTER TABLE movieplace ADD FOREIGN KEY(seat_no) REFERENCES seat(seat_no); 
+ALTER TABLE screeningplan ADD FOREIGN KEY(movie_no) REFERENCES movie(movie_no);
+ALTER TABLE screeningplan ADD FOREIGN KEY(movieplace_no) REFERENCES movieplace(movieplace_no);
+ALTER TABLE seat ADD FOREIGN KEY(movieplace_no) REFERENCES movieplace(movieplace_no);
+commit;
+-----------------------------------------------------------------------------------------------
+TABLE, FOREIGN KEY DROP
+
+DROP TABLE payment CASCADE CONSTRAINT;
+DROP TABLE ticketing CASCADE CONSTRAINT;
+DROP TABLE ticket CASCADE CONSTRAINT;
+DROP TABLE movie CASCADE CONSTRAINT;
+DROP TABLE movieplace CASCADE CONSTRAINT;
+DROP TABLE screeningplan CASCADE CONSTRAINT;
+DROP TABLE seat CASCADE CONSTRAINT;
+commit;
+-----------------------------------------------------------------------------------------------
+constraints fk_payment foreign key(id) references member(id)
+
+constraints fk_ticketing foreign key(ticket_no) REFERENCES ticket(ticket_no) 
+
+constraints fk_ticket foreign key(movie_no) references movie(movie_no)
+constraints fk_ticket foreign key(screeningplan_no) references screeningplan(screeningplan_no)
+constraints fk_ticket foreign key(movieplace_no) references movieplace(movieplace_no)
+constraints fk_ticket foreign key(seat_no) references seat(seat_no)
+
+constraints fk_movieplace foreign key(seat_no) references seat(seat_no)
+constraints fk_movieplace foreign key(movie_no) references movie(movie_no)
+
+constraints fk_screeningplan foreign key(movie_no) references movie(movie_no)
+
+constraints fk_seat foreign key(movieplace_no) references movieplace(movieplace_no)
